@@ -5,11 +5,11 @@ public class konfigurasi {
     //Pada tutorial Kali ini, karena kita membuat localhost maka alamatnya tertuju ke IP komputer
     //dimana File PHP tersebut berada
     //PENTING! JANGAN LUPA GANTI IP SESUAI DENGAN IP KOMPUTER DIMANA DATA PHP BERADA
-    public static final String URL_ADD="http://192.168.100.6/crud/tambahPgw.php";
-    public static final String URL_GET_ALL = "http://192.168.100.6/crud/tampilSemuaPgw.php";
-    public static final String URL_GET_EMP = "http://192.168.100.6/crud/tampilPgw.php?id=";
-    public static final String URL_UPDATE_EMP = "http://192.168.100.6/crud/updatePgw.php";
-    public static final String URL_DELETE_EMP = "http://192.168.100.6/crud/hapusPgw.php?id=";
+    public static final String URL_ADD="http://mahasiswatemanku.000webhostapp.com/tambahPgw.php";
+    public static final String URL_GET_ALL = "http://mahasiswatemanku.000webhostapp.com/tampilSemuaPgw.php";
+    public static final String URL_GET_EMP = "http://mahasiswatemanku.000webhostapp.com/tampilPgw.php";
+    public static final String URL_UPDATE_EMP = "http://mahasiswatemanku.000webhostapp.com/updatePgw.php";
+    public static final String URL_DELETE_EMP = "http://mahasiswatemanku.000webhostapp.com/crud/hapusPgw.php";
 
     //Dibawah ini merupakan Kunci yang akan digunakan untuk mengirim permintaan ke Skrip PHP
     public static final String KEY_EMP_ID = "id";
