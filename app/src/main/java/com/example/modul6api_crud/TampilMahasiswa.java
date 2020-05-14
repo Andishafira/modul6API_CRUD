@@ -19,11 +19,6 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
-/**
- * Created by muhammadyusuf on 01/19/2017.
- * kodingindonesia
- */
-
 public class TampilMahasiswa extends AppCompatActivity implements View.OnClickListener{
 
     private EditText editTextId;
@@ -58,11 +53,11 @@ public class TampilMahasiswa extends AppCompatActivity implements View.OnClickLi
 
         editTextId.setText(id);
 
-        getEmployee();
+        getMahasiswa();
     }
 
-    private void getEmployee(){
-        class GetEmployee extends AsyncTask<Void,Void,String>{
+    private void getMahasiswa(){
+        class GetMahasiswa extends AsyncTask<Void,Void,String>{
             ProgressDialog loading;
             @Override
             protected void onPreExecute() {
@@ -74,7 +69,7 @@ public class TampilMahasiswa extends AppCompatActivity implements View.OnClickLi
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 loading.dismiss();
-                showEmployee(s);
+                showMahasiswa(s);
             }
 
             @Override
@@ -84,11 +79,11 @@ public class TampilMahasiswa extends AppCompatActivity implements View.OnClickLi
                 return s;
             }
         }
-        GetEmployee ge = new GetEmployee();
+        GetMahasiswa ge = new GetMahasiswa();
         ge.execute();
     }
 
-    private void showEmployee(String json){
+    private void showMahasiswa(String json){
         try {
             JSONObject jsonObject = new JSONObject(json);
             JSONArray result = jsonObject.getJSONArray(konfigurasi.TAG_JSON_ARRAY);
@@ -107,12 +102,12 @@ public class TampilMahasiswa extends AppCompatActivity implements View.OnClickLi
     }
 
 
-    private void updateEmployee(){
+    private void updateMahasiswa(){
         final String name = editTextName.getText().toString().trim();
         final String nim = editTextNim.getText().toString().trim();
         final String jurusan = editTextJurusan.getText().toString().trim();
 
-        class UpdateEmployee extends AsyncTask<Void,Void,String>{
+        class UpdateMahasiswa extends AsyncTask<Void,Void,String>{
             ProgressDialog loading;
             @Override
             protected void onPreExecute() {
@@ -143,12 +138,12 @@ public class TampilMahasiswa extends AppCompatActivity implements View.OnClickLi
             }
         }
 
-        UpdateEmployee ue = new UpdateEmployee();
+        UpdateMahasiswa ue = new UpdateMahasiswa();
         ue.execute();
     }
 
-    private void deleteEmployee(){
-        class DeleteEmployee extends AsyncTask<Void,Void,String> {
+    private void deleteMahasiswa(){
+        class DeleteMahasiswa extends AsyncTask<Void,Void,String> {
             ProgressDialog loading;
 
             @Override
@@ -172,19 +167,19 @@ public class TampilMahasiswa extends AppCompatActivity implements View.OnClickLi
             }
         }
 
-        DeleteEmployee de = new DeleteEmployee();
+        DeleteMahasiswa de = new DeleteMahasiswa();
         de.execute();
     }
 
-    private void confirmDeleteEmployee(){
+    private void confirmDeleteMahasiswa(){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-        alertDialogBuilder.setMessage("Apakah Kamu Yakin Ingin Menghapus Pegawai ini?");
+        alertDialogBuilder.setMessage("Apakah Kamu Yakin Ingin Menghapus Mahasiswa ini?");
 
         alertDialogBuilder.setPositiveButton("Ya",
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface arg0, int arg1) {
-                        deleteEmployee();
+                        deleteMahasiswa();
                         startActivity(new Intent(TampilMahasiswa.this, TampilSemuaMhs.class));
                     }
                 });
@@ -204,11 +199,11 @@ public class TampilMahasiswa extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View v) {
         if(v == buttonUpdate){
-            updateEmployee();
+            updateMahasiswa();
         }
 
         if(v == buttonDelete){
-            confirmDeleteEmployee();
+            confirmDeleteMahasiswa();
         }
     }
 }

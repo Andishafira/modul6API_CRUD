@@ -19,10 +19,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/**
- * Created by muhammadyusuf on 01/19/2017.
- * kodingindonesia
- */
 @SuppressWarnings("unchecked")
 public class TampilSemuaMhs extends AppCompatActivity implements ListView.OnItemClickListener{
 
@@ -40,7 +36,7 @@ public class TampilSemuaMhs extends AppCompatActivity implements ListView.OnItem
     }
 
 
-    private void showEmployee(){
+    private void showMahasiswa(){
         JSONObject jsonObject = null;
         ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String, String>>();
         try {
@@ -85,7 +81,7 @@ public class TampilSemuaMhs extends AppCompatActivity implements ListView.OnItem
                 super.onPostExecute(s);
                 loading.dismiss();
                 JSON_STRING = s;
-                showEmployee();
+                showMahasiswa();
             }
 
             @Override

@@ -14,19 +14,9 @@ import java.util.Map;
 
 import javax.net.ssl.HttpsURLConnection;
 
-/**
- * Created by muhammadyusuf on 01/19/2017.
- * kodingindonesia
- */
-
 public class RequestHandler {
-    //Metode Untuk mengirim httpPostRequest
-    //Metode ini mengambil 2 Argumen
-    //Metode Pertama adalah URL dari Skrip yang digunakan untuk mengirimkan permintaan
-    //Yang lainnya adalah HashMap dengan nilai pasangan nama yang berisi data yang akan dikirim dengan permintaan
     public String sendPostRequest(String requestURL,
                                   HashMap<String, String> postDataParams) {
-        //Membuat URL
         URL url;
 
         //Objek StringBuilder untuk menyimpan pesan diambil dari server

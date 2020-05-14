@@ -1,30 +1,23 @@
 package com.example.modul6api_crud;
 
 public class konfigurasi {
-    //Dibawah ini merupakan Pengalamatan dimana Lokasi Skrip CRUD PHP disimpan
-    //Pada tutorial Kali ini, karena kita membuat localhost maka alamatnya tertuju ke IP komputer
-    //dimana File PHP tersebut berada
-    //PENTING! JANGAN LUPA GANTI IP SESUAI DENGAN IP KOMPUTER DIMANA DATA PHP BERADA
+
     public static final String URL_ADD="http://192.168.100.6/crud/tambahMhs.php";
     public static final String URL_GET_ALL = "http://192.168.100.6/crud/tampilSemuaMhs.php";
     public static final String URL_GET_MHS = "http://192.168.100.6/crud/tampilMhs.php?id=";
     public static final String URL_UPDATE_MHS = "http://192.168.100.6/crud/updateMhs.php";
     public static final String URL_DELETE_MHS = "http://192.168.100.6/crud/hapusMhs.php?id=";
 
-    //Dibawah ini merupakan Kunci yang akan digunakan untuk mengirim permintaan ke Skrip PHP
     public static final String KEY_MHS_ID = "id";
     public static final String KEY_MHS_NAMA = "name";
-    public static final String KEY_MHS_NIM = "nim"; //desg itu variabel untuk posisi
-    public static final String KEY_MHS_JURUSAN = "jurusan"; //salary itu variabel untuk gajih
+    public static final String KEY_MHS_NIM = "nim";
+    public static final String KEY_MHS_JURUSAN = "jurusan";
 
-    //JSON Tags
     public static final String TAG_JSON_ARRAY="result";
     public static final String TAG_ID = "id";
     public static final String TAG_NAMA = "name";
     public static final String TAG_NIM = "nim";
     public static final String TAG_JURUSAN = "jurusan";
-
-    //ID karyawan
-    //emp itu singkatan dari Employee
+    
     public static final String MHS_ID = "mhs_id";
 }

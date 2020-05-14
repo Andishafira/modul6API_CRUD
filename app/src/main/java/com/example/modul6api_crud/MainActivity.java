@@ -14,11 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.HashMap;
 
-/**
- * Created by muhammadyusuf on 01/19/2017.
- * kodingindonesia
- */
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     //Dibawah ini merupakan perintah untuk mendefinikan View
@@ -34,7 +29,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Inisialisasi dari View
         editTextName = (EditText) findViewById(R.id.editTextName);
         editTextNim = (EditText) findViewById(R.id.editTextNim);
         editTextJurusan = (EditText) findViewById(R.id.editTextJurusan);
@@ -42,20 +36,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonAdd = (Button) findViewById(R.id.buttonAdd);
         buttonView = (Button) findViewById(R.id.buttonView);
 
-        //Setting listeners to button
         buttonAdd.setOnClickListener(this);
         buttonView.setOnClickListener(this);
     }
 
 
-    //Dibawah ini merupakan perintah untuk Menambahkan Pegawai (CREATE)
-    private void addEmployee(){
+    private void addMahasiswa(){
 
         final String name = editTextName.getText().toString().trim();
         final String nim = editTextNim.getText().toString().trim();
         final String jur = editTextJurusan.getText().toString().trim();
 
-        class AddEmployee extends AsyncTask<Void,Void,String>{
+        class AddMahasiswa extends AsyncTask<Void,Void,String>{
 
             ProgressDialog loading;
 
@@ -85,14 +77,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
 
-        AddEmployee ae = new AddEmployee();
+        AddMahasiswa ae = new AddMahasiswa();
         ae.execute();
     }
 
     @Override
     public void onClick(View v) {
         if(v == buttonAdd){
-            addEmployee();
+            addMahasiswa();
         }
 
         if(v == buttonView){
