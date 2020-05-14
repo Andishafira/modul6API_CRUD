@@ -4,13 +4,28 @@
     android:layout_height="match_parent" android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
+    android:background="@drawable/wallpaper2"
     android:paddingBottom="16dp"
     tools:context="com.example.modul6api_crud.TampilSemuaMhs">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Daftar Anggota"
+        android:textSize="30dp"
+        android:textColor="#1a3e59"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="0dp" />
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#ffff"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="120dp"
         android:id="@+id/listView" />
 
 

@@ -4,48 +4,101 @@
     android:layout_height="match_parent" android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
+    android:background="@drawable/wallpaper1"
     android:paddingBottom="16dp" tools:context=".MainActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="PENDAFTARAN"
+        android:textSize="30dp"
+        android:textColor="#ffff"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="0dp" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nama Mahasiswa" />
+        android:text="Nama Mahasiswa :"
+        android:textSize="20dp"
+        android:textColor="#ffff"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="50dp" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:shadowColor="#010038"
+        android:inputType="textPersonName"
+        android:textSize="20dp"
+        android:layout_marginRight="50dp"
+        android:textColor="#ffff"
+        android:layout_marginLeft="50dp"
         android:id="@+id/editTextName" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nim" />
+        android:text="NIM :"
+        android:textSize="20dp"
+        android:textColor="#ffff"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="50dp"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:shadowColor="#010038"
+        android:inputType="textPersonName"
+        android:textSize="20dp"
+        android:layout_marginRight="50dp"
+        android:textColor="#ffff"
+        android:layout_marginLeft="50dp"
         android:id="@+id/editTextNim" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Jurusan" />
+        android:text="Jurusan :"
+        android:textSize="20dp"
+        android:textColor="#ffff"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="50dp"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:shadowColor="#010038"
+        android:inputType="textPersonName"
+        android:textSize="20dp"
+        android:layout_marginRight="50dp"
+        android:textColor="#ffff"
+        android:layout_marginLeft="50dp"
         android:id="@+id/editTextJurusan" />
 
     <Button
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tambah Pegawai"
+        android:text="Tambah Anggota"
+        android:textColor="#fff"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:background="#1a3e59"
+        android:shadowRadius="@android:integer/config_mediumAnimTime"
         android:id="@+id/buttonAdd" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Daftar Pegawai"
+        android:text="Daftar Anggota"
+        android:textColor="#fff"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:background="#1a3e59"
+        android:shadowRadius="@android:integer/config_mediumAnimTime"
         android:id="@+id/buttonView" />
 
 </LinearLayout>
