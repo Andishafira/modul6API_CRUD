@@ -23,8 +23,8 @@ import java.util.HashMap;
  * Created by muhammadyusuf on 01/19/2017.
  * kodingindonesia
  */
-
-public class TampilSemuaPgw extends AppCompatActivity implements ListView.OnItemClickListener{
+@SuppressWarnings("unchecked")
+public class TampilSemuaMhs extends AppCompatActivity implements ListView.OnItemClickListener{
 
     private ListView listView;
 
@@ -33,7 +33,7 @@ public class TampilSemuaPgw extends AppCompatActivity implements ListView.OnItem
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tampil_semua_pgw);
+        setContentView(R.layout.activity_tampil_semua_mhs);
         listView = (ListView) findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
         getJSON();
@@ -63,7 +63,7 @@ public class TampilSemuaPgw extends AppCompatActivity implements ListView.OnItem
         }
 
         ListAdapter adapter = new SimpleAdapter(
-                TampilSemuaPgw.this, list, R.layout.list_item,
+                TampilSemuaMhs.this, list, R.layout.list_item,
                 new String[]{konfigurasi.TAG_ID,konfigurasi.TAG_NAMA},
                 new int[]{R.id.id, R.id.name});
 
@@ -77,7 +77,7 @@ public class TampilSemuaPgw extends AppCompatActivity implements ListView.OnItem
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(TampilSemuaPgw.this,"Mengambil Data","Mohon Tunggu...",false,false);
+                loading = ProgressDialog.show(TampilSemuaMhs.this,"Mengambil Data","Mohon Tunggu...",false,false);
             }
 
             @Override
@@ -101,10 +101,10 @@ public class TampilSemuaPgw extends AppCompatActivity implements ListView.OnItem
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent = new Intent(this, tampilPegawai.class);
+        Intent intent = new Intent(this, TampilMahasiswa.class);
         HashMap<String,String> map =(HashMap)parent.getItemAtPosition(position);
         String empId = map.get(konfigurasi.TAG_ID).toString();
-        intent.putExtra(konfigurasi.EMP_ID,empId);
+        intent.putExtra(konfigurasi.MHS_ID,empId);
         startActivity(intent);
     }
 }

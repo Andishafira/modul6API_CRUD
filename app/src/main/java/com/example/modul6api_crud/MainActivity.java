@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //Dibawah ini merupakan perintah untuk mendefinikan View
     private EditText editTextName;
-    private EditText editTextDesg;
-    private EditText editTextSal;
+    private EditText editTextNim;
+    private EditText editTextJurusan;
 
     private Button buttonAdd;
     private Button buttonView;
@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //Inisialisasi dari View
         editTextName = (EditText) findViewById(R.id.editTextName);
-        editTextDesg = (EditText) findViewById(R.id.editTextDesg);
-        editTextSal = (EditText) findViewById(R.id.editTextSalary);
+        editTextNim = (EditText) findViewById(R.id.editTextNim);
+        editTextJurusan = (EditText) findViewById(R.id.editTextJurusan);
 
         buttonAdd = (Button) findViewById(R.id.buttonAdd);
         buttonView = (Button) findViewById(R.id.buttonView);
@@ -52,8 +52,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void addEmployee(){
 
         final String name = editTextName.getText().toString().trim();
-        final String desg = editTextDesg.getText().toString().trim();
-        final String sal = editTextSal.getText().toString().trim();
+        final String nim = editTextNim.getText().toString().trim();
+        final String jur = editTextJurusan.getText().toString().trim();
 
         class AddEmployee extends AsyncTask<Void,Void,String>{
 
@@ -75,9 +75,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             protected String doInBackground(Void... v) {
                 HashMap<String,String> params = new HashMap<>();
-                params.put(konfigurasi.KEY_EMP_NAMA,name);
-                params.put(konfigurasi.KEY_EMP_POSISI,desg);
-                params.put(konfigurasi.KEY_EMP_GAJIH,sal);
+                params.put(konfigurasi.KEY_MHS_NAMA,name);
+                params.put(konfigurasi.KEY_MHS_NIM,nim);
+                params.put(konfigurasi.KEY_MHS_JURUSAN,jur);
 
                 RequestHandler rh = new RequestHandler();
                 String res = rh.sendPostRequest(konfigurasi.URL_ADD, params);
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if(v == buttonView){
-            startActivity(new Intent(this,TampilSemuaPgw.class));
+            startActivity(new Intent(this, TampilSemuaMhs.class));
         }
     }
 }
